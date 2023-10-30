@@ -80,4 +80,21 @@ main {
 .content{
     margin: 0 auto;
     min-height: 100%;
+    font-weight: normal;
+}
+
+/*
+MOVIES CONTENT
+*/
+
+#movies {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    column-gap: 15px;
+    overflow: hidden;
+}
+
+.movie-item__header__poster {
+    width : 33%;
 }
