@@ -1,7 +1,6 @@
 import routes from "../routes/routes";
 import UrlParser from "../routes/urlParser";
 import DrawerIniator from "../utils/drawerInitiator";
-import NowPlaying from "./pages/now-playing";
 
 class App {
     constructor({button, drawer, content}) {
@@ -21,7 +20,8 @@ class App {
 
     async pageRender() {
         const url = UrlParser.parseActiveUrlWithCombiner() ; 
-        const pageScript = NowPlaying  ; 
+        console.log('Anda akan mengakses url : ', url)
+        const pageScript = routes[url]  ; 
         this._content.innerHTML =  pageScript.render();
         await  pageScript.renderMovieContent();
     }

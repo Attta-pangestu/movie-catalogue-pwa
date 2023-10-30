@@ -1,7 +1,11 @@
 const DrawerIniator = {
     init({button, drawer, content}) {
+        
+        console.log('Memanggil Drawer Initor')
+
         button.addEventListener('click', (event) => {
             this._toggleDrawer(drawer,event) ; 
+            console.log('HAMBURGER MENU') ;
         });
 
         content.addEventListener('click', event => {
@@ -10,7 +14,7 @@ const DrawerIniator = {
     }, 
 
     _toggleDrawer(drawer, event) {
-        event.stopPropagation() ;
+        // event.stopPropagation() ;
         drawer.classList.toggle('open') ; 
     },
 
