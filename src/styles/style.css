@@ -134,8 +134,9 @@ MOVIES CONTENT
 }
 
 .movie-item__content {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     display: inline-block;
+    position: relative;
 }
 
 .movie-item__content h3 {
@@ -156,14 +157,106 @@ MOVIES CONTENT
 }
 
 .movie-item__content .movie-item__content__button {
-    padding: 0.5rem 2rem ;
     margin: 1rem auto;
-    background-color: #eb0c0cda;
-    color: white;
+    padding: 0.5rem;
+    background-color: #eb0c0cda;   
     font-size: 1rem;
     font-weight: 600;
     box-shadow: 3px 4px 8px 4px rgba(0,0,0,0.6);
     border-radius: 1rem;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    color: white;
 }
+
+.movie-item__content > a {
+    text-decoration: none;
+}
+
+/* movie detail */
+/* Styling judul halaman */
+.movie__title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Warna teks judul */
+    margin-bottom: 10px;
+  }
+  
+  /* Styling gambar poster */
+  .movie__poster {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan poster */
+    margin-bottom: 20px;
+  }
+  
+  /* Styling informasi film */
+  .movie__info {
+    background-color: #f9f9f9; /* Warna latar belakang informasi film */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling judul informasi film */
+  .movie__info h3 {
+    font-size: 18px;
+    color: #333; /* Warna teks judul informasi film */
+    margin-bottom: 15px;
+  }
+  
+  /* Styling judul tagline, release date, duration, dan rating */
+  .movie__info h4 {
+    font-size: 16px;
+    color: #555; /* Warna teks judul informasi tambahan */
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  /* Styling konten tagline, release date, duration, dan rating */
+  .movie__info p {
+    font-size: 14px;
+    color: #333; /* Warna teks informasi tambahan */
+    margin-bottom: 15px;
+  }
+  
+  /* Styling overview film */
+  .movie__info__overview {
+    margin-top: 20px;
+  }
+  
+  /* Styling judul overview film */
+  .movie__info__overview h3 {
+    font-size: 18px;
+    color: #333; /* Warna teks judul overview */
+    margin-bottom: 15px;
+  }
+  
+  /* Styling konten overview film */
+  .movie__info__overview p {
+    font-size: 16px;
+    color: #444; /* Warna teks konten overview */
+  }
+  
+  
+  /*
+    Footer
+  */
+  
+  footer {
+    padding: 16px;
+  }
+  
+  footer p {
+    text-align: center;
+    color: #aaaaaa;
+  }
+  
+  footer p a {
+    color: #db0000;
+    text-decoration: none;
+  }
+  
 
 

@@ -36,7 +36,7 @@ const NowPlaying = {
                 <div class="movie-item__content">
                     <h3 class="movie-item__content__title"><a>${movie.title}</a></h3>
                     <p>${movie.overview}</p>
-                    <a href="/#/detail/${movie.id}" class="movie-item__content__button"> Detail Film ${movie.title} </a>
+                    <a href="/#/detail/${movie.id}" class="movie-item__content__button" > Detail Film ${movie.title} </a>
                 </div>
             </div>
         `;

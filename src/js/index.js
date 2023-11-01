@@ -11,3 +11,7 @@ const newApp = new App({
 window.addEventListener('load', () => {
     newApp.pageRender() ; 
 });
+
+window.addEventListener('hashchange', ()  => {
+    newApp.pageRender(); 
+});

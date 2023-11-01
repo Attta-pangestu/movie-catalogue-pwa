@@ -9,6 +9,17 @@ class ThemovieDBSources {
             console.log('Error Fetch Now Playing : ', err) ;
         }
     }
+
+    static async detailMoviePlaying(id) {
+        try{
+            const response = await fetch(ApiEndpoint.DETAIL_MOVIE+id, ApiEndpoint.HEADERS);
+            const responseJSON = await response.json() ;
+            return responseJSON ; 
+        }
+        catch(err) {
+            console.log('Terjadi error saat ', err)
+        }
+    }
     
 
 

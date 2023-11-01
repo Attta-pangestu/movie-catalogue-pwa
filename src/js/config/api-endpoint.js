@@ -8,8 +8,8 @@ const ApiEndpoint = {
                 'Authorization' : `Bearer ${Config.ACCES_TOKEN}`, 
                 'accept' : 'application/json',
             }
-        }
+        },
+    DETAIL_MOVIE :`${Config.BASE_URL}movie/` ,   
     }
     
-
 export default ApiEndpoint; 
