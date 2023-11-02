@@ -20,6 +20,18 @@ class ThemovieDBSources {
             console.log('Terjadi error saat ', err)
         }
     }
+
+    static async upcomingMovies() {
+        try{
+            const response = await fetch(ApiEndpoint.UPCOMING, ApiEndpoint.HEADERS) ; 
+            const responseJSON = await response.json() ;
+            return responseJSON.results ; 
+        }
+        catch(err) {
+            console.log('Terjadi error saat mengambil data upcoming movies : ', err) ; 
+        }
+        
+    }
     
 
 

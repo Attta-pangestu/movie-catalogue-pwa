@@ -4,7 +4,7 @@ import Detail from "../views/pages/detail";
 
 const routes = {
     '/' : NowPlaying, 
-    '/upcoming.html' : Upcoming, 
+    '/upcoming' : Upcoming, 
     '/detail/id' : Detail,
 }
 
