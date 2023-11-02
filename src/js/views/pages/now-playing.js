@@ -1,5 +1,5 @@
 import ThemovieDBSources from "../../data/theMoviedb-sources";
-import Config from "../../config/config";
+import movieTemplate from "../../template/movieTemplate";
 
 const NowPlaying = {
     render() {
@@ -16,11 +16,11 @@ const NowPlaying = {
         const moviesContainer = document.querySelector('#movies') ;
         console.log('Berhasil melakukan fetch list now playing : ', movies) ; 
         movies.forEach(movie => {
-            moviesContainer.innerHTML += this.renderMovieTemplate(movie);
+            moviesContainer.innerHTML += movieTemplate.renderMovieTemplate(movie);
         });
     }, 
 
-   
+    
 };
 
 export default NowPlaying;
