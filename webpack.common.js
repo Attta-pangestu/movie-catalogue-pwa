@@ -1,13 +1,13 @@
 /* eslint-disable no-undef */
 const copywebpackPlugin = require('copy-webpack-plugin') ; 
 const HtmlWebpackPlugin = require('html-webpack-plugin') ; 
+const {GenerateSW} = require('workbox-webpack-plugin');
 const path = require('path') ; 
 
 
 module.exports = {
     entry : {
         app : path.resolve(__dirname, 'src/js/index.js') ,
-        sw : path.resolve(__dirname, 'src/js/sw.js'),
     }, 
     output : {
         filename: '[name].bundle.js', 
@@ -40,6 +40,9 @@ module.exports = {
                 to : path.resolve(__dirname, 'dist/'),
             }]
         }),
+        new GenerateSW({
+            swDest : './sw.bundle.js'
+        })
     ]
     
 };
