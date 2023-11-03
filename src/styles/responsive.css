@@ -1,0 +1,72 @@
+@media screen and (max-width :600px) {
+    main{
+        padding: 5px;
+    }
+
+    .app-bar{
+        grid-template-columns: 1fr auto;
+        padding: 8px 32px;
+    }
+    .app-bar .app-bar__brand h1 {
+        font-size : 1em ; 
+    }
+
+    .app-bar .app-bar__menu {
+        display: inline-block;
+    } 
+
+
+
+    #movies {
+        grid-template-columns: 1fr ;
+    }
+
+    .movie-item {
+        padding: 1em 0.2em;
+    }
+
+    .movie-item__header .movie-item__header__rating {
+        font-size: 0.5em ;
+    }
+
+    .movie-item__content .movie-item__content__button {
+        padding: 0.2em;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    
+
+    .app-bar{
+        grid-template-columns: 1fr auto;
+        padding: 8px;
+    }
+    .app-bar .app-bar__brand h1 {
+        font-size : 1em ; 
+    }
+
+    .app-bar .app-bar__menu {
+        display: none;
+        background-color: red;
+    } 
+
+    .app-bar .app-bar__navigation {
+        position: static;
+        height: fit-content;
+    }
+
+    .app-bar .app-bar__navigation ul li  {
+        display: inline-block;
+    }
+
+    .app-bar .app-bar__navigation ul li a {
+        text-align: center;
+        margin: 0;
+        font-size: 0.75em;
+    }
+
+    #movies {
+        grid-template-columns: 1fr 1fr ;
+    }
+}

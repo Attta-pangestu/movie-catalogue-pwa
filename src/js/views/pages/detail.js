@@ -7,7 +7,7 @@ const Detail= {
         return `
             <div class="content">
                 <h2 class="content__heading">Detail Film</h2>
-                <div id="movies"></div>
+                <div id="movie"></div>
             </div>
         `;
     },
@@ -19,9 +19,9 @@ const Detail= {
     }, 
 
     _renderDetailMovie(movie) {
-        const movieContainer = document.querySelector('#movies') ; 
+        const movieContainer = document.querySelector('#movie') ; 
         movieContainer.innerHTML = `
-            <h2 class="movie__title">${movie.original_title}<h2/>
+            <h2 class="movie__title">${movie.original_title}</h2>
             <img class="movie__poster" src="${Config.BASE_IMAGE_URL + movie.poster_path }"/>
             <div class="movie__info">
                 <h3>Movie Information</h3>

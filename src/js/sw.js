@@ -2,21 +2,20 @@ import 'regenerator-runtime' ;
 import CacheHelper from './utils/cacheHelper';
 
 const assetCache = [
-    '/', 
-    './index.html', 
-    '/pages/fallback.html',
-    './css/styles.css',
-    './css/materialize.min.css',
-    './js/app.js', 
-    './js/materialize.min.js', 
-    './js/script.js',
-    './img/dish.png',
-    './js/firebase-app.js',
-    './js/db.js',
-    './js/ui.js',
-    'https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js', 
-    'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore-compat.js',
-    'https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2',
+    './',
+    './icons/icon-72x72.png',
+    './icons/icon-96x96.png',
+    './icons/icon-128x128.png',
+    './icons/icon-144x144.png',
+    './icons/icon-152x152.png',
+    './icons/icon-192x192.png',
+    './icons/icon-384x384.png',
+    './icons/icon-512x512.png',
+    './index.html',
+    './favicon.png',
+    './app.bundle.js',
+    './manifest.json',
+    './sw.bundle.js',
 ] ;
 
 self.addEventListener('install', event => {
@@ -29,5 +28,9 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-    event.waitUntil(CacheHelper.fetchRequest(event.request.url)) ; 
+    console.log('Service worker intercept : ', event.request) ; 
+    if(event.request.url.startsWith('http')) {
+        event.respondWith(CacheHelper.revalidateCache(event.request)) ; 
+    }
+    
 });

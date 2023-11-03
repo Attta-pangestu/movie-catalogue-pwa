@@ -9,7 +9,6 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-size: 12px;
 }
 
 /*
@@ -41,7 +40,7 @@ APP BAR
 .app-bar .app-bar__brand h1{
     color: #db0000;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 22px;
     user-select: none;
 }
 
@@ -55,7 +54,7 @@ APP BAR
     padding: 8px;
     background-color: white;
     overflow: hidden;
-    font-size: 1rem;
+    font-size: 1.5rem;
     height: 100vh;
 }
 
@@ -104,7 +103,7 @@ MOVIES CONTENT
 
 .movie-item {
     width : 100%;
-    max-width: 360px;
+    max-width: 500px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 8px;
     overflow: hidden;
@@ -126,7 +125,7 @@ MOVIES CONTENT
     left: 16px;
     top: 20px;
     /* z-index: 99; */
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 600;
     background-color: rgba(0,0,0,0.7);
     border-radius: 0.5rem;
@@ -135,7 +134,7 @@ MOVIES CONTENT
 }
 
 .movie-item__content {
-    padding: 1.5rem 0.5rem;
+    padding: 1.5rem 1rem;
     display: inline-block;
     position: relative;
 }
@@ -177,17 +176,25 @@ MOVIES CONTENT
 
 /* movie detail */
 /* Styling judul halaman */
+#movie {
+  display: flex;
+  flex-direction : column ; 
+  align-items: center;
+}
+
 .movie__title {
     font-size: 24px;
     font-weight: bold;
     color: #333; /* Warna teks judul */
     margin-bottom: 10px;
+    text-align: center;
   }
   
   /* Styling gambar poster */
   .movie__poster {
-    max-width: 100%;
-    height: auto;
+    max-width: 500px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan poster */
     margin-bottom: 20px;
   }
@@ -239,7 +246,7 @@ MOVIES CONTENT
     font-size: 16px;
     color: #444; /* Warna teks konten overview */
   }
-  
+   
   
   /*
     Footer

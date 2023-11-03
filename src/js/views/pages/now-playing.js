@@ -14,7 +14,6 @@ const NowPlaying = {
     async renderMovieContent(){
         const movies = await ThemovieDBSources.getNowPlaying() ; 
         const moviesContainer = document.querySelector('#movies') ;
-        console.log('Berhasil melakukan fetch list now playing : ', movies) ; 
         movies.forEach(movie => {
             moviesContainer.innerHTML += movieTemplate.renderMovieTemplate(movie);
         });

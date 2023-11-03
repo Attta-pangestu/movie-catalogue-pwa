@@ -1,7 +1,7 @@
 const movieTemplate =  {
     renderMovieTemplate(movie) {
         return `
-            <div class="movie-item">
+            <div class="movie-item" >
                 <div class="movie-item__header">
                     <img class="movie-item__header__poster" 
                         alt="${movie.title}"

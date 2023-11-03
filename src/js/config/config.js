@@ -4,6 +4,7 @@ const Config = {
     BASE_IMAGE_URL : 'https://image.tmdb.org/t/p/w500',
     DEFAULT_LANGUAGE : 'en-us',
     CACHE_NAME : 'static-site-v1',
+    DYNAMIC_CACHE_NAME : 'dynamic-site-v1',
 }
 
 export default Config ;
