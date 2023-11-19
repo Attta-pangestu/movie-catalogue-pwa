@@ -1,0 +1,220 @@
+@media screen and (min-width:200px) and (max-width:600px) {
+    main{
+        padding: 8px 16px ;
+    }
+
+    .app-bar{
+        padding: 8px 32px ;
+    }
+    .app-bar .app-bar__brand h1 {
+        font-size : 1.5em ; 
+    }
+
+    .movie-item__header .movie-item__header__rating {
+        font-size: 1em ;
+    }
+
+    .movie-item__content p {
+        font-size: 0.75em;
+    }
+
+    .movie-item__content .movie-item__content__button {
+        font-size: 1em;
+    }
+
+    .app-bar .app-bar__menu {
+        display: inline-block;
+    } 
+
+    .app-bar .app-bar__menu #hamburgerButton {
+        font-size: 2em;
+        font-weight: 600;
+        color: black;
+        border: 0;
+        background-color: transparent;
+    }
+
+    .app-bar .app-bar__navigation {
+        position: absolute;
+        z-index: 99999;
+        top: 50px;
+        left: -250px;
+        width: 250px;
+        transition: all 0.3s;
+        padding: 8px;
+        overflow: hidden;
+        font-size: 1em;
+        height: 100vh;
+    }
+
+    .app-bar .app-bar__navigation.open{
+        left: 0 !important;
+    }
+
+
+    .app-bar .app-bar__navigation ul li a {
+        text-align: center;
+        margin: 0;
+        font-size: 1em;
+    }
+
+    #movies {
+        grid-template-columns: 1fr ;
+    }
+
+    .movie-item {
+        padding: 1em 0.2em;
+    }
+
+    .movie-item__content .movie-item__content__button {
+        padding: 0.2em;
+    }
+
+    h2.movie__title {
+        text-align: center;
+    }
+    
+   
+    /* DETAIL MOVIE*/
+
+    img.movie__poster {
+        margin: auto;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    #movie {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media screen and (min-width:200px) {
+    #likeButtonContainer{
+        bottom: 56px;
+        right: 72px;
+        width: 2.5em;
+        height: 2.5em;
+        font-size: 2em;
+    }
+
+}
+
+@media screen and (min-width: 700px) {
+    .app-bar{
+        padding: 8px 32px ;
+    }
+    .app-bar .app-bar__brand h1 {
+        font-size : 1.5em ; 
+    }
+
+    .movie-item__header .movie-item__header__rating {
+        font-size: 1em ;
+    }
+
+    .movie-item__content p {
+        font-size: 0.75em;
+    }
+
+    .movie-item__content .movie-item__content__button {
+        font-size: 1em;
+    }
+
+    .app-bar .app-bar__menu {
+        display: inline-block;
+    } 
+
+    .app-bar .app-bar__menu #hamburgerButton {
+        font-size: 2em;
+        font-weight: 600;
+        color: black;
+        border: 0;
+        background-color: transparent;
+    }
+
+    .app-bar .app-bar__navigation {
+        position: absolute;
+        z-index: 99999;
+        top: 50px;
+        left: -250px;
+        width: 250px;
+        transition: all 0.3s;
+        padding: 8px;
+        overflow: hidden;
+        font-size: 1em;
+        height: 100vh;
+    }
+
+    .app-bar .app-bar__navigation.open{
+        left: 0 !important;
+    }
+
+
+    .app-bar .app-bar__navigation ul li a {
+        text-align: center;
+        margin: 0;
+        font-size: 1em;
+    }
+
+    #movies {
+        grid-template-columns: repeat(2,1fr) ;
+    }
+
+      /* DETAIL MOVIE  */
+
+
+}
+
+
+
+@media screen and (min-width: 1000px) {
+    .app-bar{
+        padding: 8px 32px;
+    }
+    .app-bar .app-bar__brand h1 {
+        font-size : 2.5em ; 
+    }
+    .app-bar .app-bar__navigation ul li a {
+        font-size: 1.5em ;
+    }
+
+    #movies {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    #likeButtonContainer{
+        bottom: 56px;
+        width: 2.5em;
+        height: 2.5em;
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .app-bar .app-bar__menu{
+        display: none;
+    }
+
+    .app-bar .app-bar__navigation {
+        position: static;
+        width: 100%;
+        height: fit-content;
+    }
+
+    .app-bar .app-bar__navigation ul li {
+        display: inline-block;
+        
+    }
+
+    #movies{
+        grid-template-columns: repeat(4,1fr);
+    }
+
+    #likeButtonContainer{
+        font-size: 2em;
+        position: fixed;
+        bottom : 116px ; 
+        width: 3em;
+        height: 3em;
+      }
+}

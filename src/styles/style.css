@@ -1,0 +1,372 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif ;
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+APP BAR   
+*/
+
+.app-bar{
+    padding: 8px ;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2); 
+    gap: 10px;
+  }
+
+.app-bar .app-bar__brand h1{
+    color: #db0000;
+    text-transform: uppercase;
+    font-size: 2em;
+    user-select: none;
+}
+.app-bar .app-bar__menu {
+  display: none;
+} 
+
+.app-bar .app-bar__navigation {
+  position: static;
+  height: fit-content;
+  width: 100%;
+}
+
+.app-bar .app-bar__navigation ul li  {
+  display: inline-block;
+}
+
+.app-bar .app-bar__navigation ul li a {
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 1.5em;
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(131, 131, 131);
+  margin-bottom: 5px;
+  width: 150px;
+}
+
+.app-bar .app-bar__navigation {
+    background-color: white;
+}
+
+
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin: 0 .5em;
+  width: 100%;
+}
+
+.search-bar > input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: white;
+  padding: 1em 2em;
+  border: 1px solid #db0000;
+  border-radius: 1em;
+  outline-offset: -8px;
+}
+
+.search-bar > input::placeholder{
+  border: none;
+}
+
+.search-bar > input:focus {
+  border: none;
+  padding: 1em 2em ;
+  outline: 2px dashed rgb(30, 30, 228) ;
+}
+
+.app-bar .app-bar__brand h1 {
+  white-space: nowrap;
+}
+
+/* 
+MAIN CONTENT
+*/
+
+main {
+    padding: 32px;
+    flex: 1;
+}
+
+.content{
+    margin: 0 auto;
+    min-height: 100%;
+    font-weight: normal;
+}
+
+/*
+MOVIES CONTENT 
+*/
+
+#movies {
+    width: 100%;
+    display: grid;
+    column-gap: 16px;
+    overflow: hidden;
+    margin: 32px 0;
+}
+
+/* MOVIE ITEM  */
+
+.movie-item {
+    width : 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 2em;
+    overflow: hidden;
+    margin: 16px 0;
+
+}
+
+.movie-item__header {
+    position: relative;
+}
+
+.movie-item__header .movie-item__header__poster{
+    width: 100%;
+}
+
+.movie-item__header .movie-item__header__rating {
+    position: absolute;
+    display: inline-block;
+    left: 16px;
+    top: 20px;
+    /* z-index: 99; */
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 0.5rem;
+    color: white;
+    padding: 0.5rem 1rem;
+}
+
+.movie-item__content {
+    position: relative;
+    padding: 1.5em ;
+    display: inline-block;
+}
+
+.movie-item__content h3 {
+    margin: 10px 0 ;
+}
+
+.movie-item__content h3 a{
+    color: #db0000;
+    text-decoration: none;
+}
+
+.movie-item__content p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.movie-item__content .movie-item__content__button {
+    position: static;
+    margin: 1em 0;
+    padding: 0.5rem;
+    background-color: #eb0c0cda;   
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 3px 4px 8px 4px rgba(0,0,0,0.6);
+    border-radius: 1rem;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    color: white;
+}
+
+.movie-item__content > a {
+    text-decoration: none;
+}
+
+/* movie detail */
+/* Styling judul halaman */
+#movie {
+  display: grid;
+  grid-template-columns: auto 1fr ;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  gap: 8px 16px;
+}
+
+h2.movie__title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333; /* Warna teks judul */
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  /* Styling gambar poster */
+  .movie .movie__poster {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan poster */
+    margin-bottom: 20px;
+  }
+  
+  /* Styling informasi film */
+  .movie__info {
+    background-color: #f9f9f9; /* Warna latar belakang informasi film */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling judul informasi film */
+  .movie__info h3 {
+    font-size: 18px;
+    color: #333; /* Warna teks judul informasi film */
+    margin-bottom: 15px;
+  }
+  
+  /* Styling judul tagline, release date, duration, dan rating */
+  .movie__info h4 {
+    font-size: 16px;
+    color: #555; /* Warna teks judul informasi tambahan */
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  /* Styling konten tagline, release date, duration, dan rating */
+  .movie__info p {
+    font-size: 14px;
+    color: #333; /* Warna teks informasi tambahan */
+    margin-bottom: 15px;
+  }
+  
+  /* Styling overview film */
+  .movie__info__overview {
+    margin-top: 20px;
+  }
+  
+  /* Styling judul overview film */
+  .movie__info__overview h3 {
+    font-size: 18px;
+    color: #333; /* Warna teks judul overview */
+    margin-bottom: 15px;
+  }
+  
+  /* Styling konten overview film */
+  .movie__info__overview p {
+    font-size: 16px;
+    color: #444; /* Warna teks konten overview */
+  }
+   
+  
+  /*
+    Footer
+  */
+  
+  footer {
+    padding: 16px;
+  }
+  
+  footer p {
+    text-align: center;
+    color: #aaaaaa;
+  }
+  
+  footer p a {
+    color: #db0000;
+    text-decoration: none;
+  }
+  
+
+  /*
+  LIKE BUTTONN COMMON STYLE
+  */
+
+.like {
+  background-color: #db0000;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 
+LIKE NOWPLAYING
+*/
+.movie-item__like.like {
+  font-size: 3em;
+  position: static;
+  margin: 0 auto;
+  color: white;
+  width: 1.6em;
+  height: 1.6em;
+}
+
+.movie-item__like.like > .fa {
+  font-size : 1em ;
+}
+
+/*
+LIKE BUTTON DETAIL MOVIE
+*/
+
+
+
+.like .fa {
+  font-size: 1.5em;
+}
+
+
+
+/* SUBSCRIBE BUTTON STYLE */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #db0000;
+  border: 1px solid #770000;
+  border-radius: 4px;
+
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+
+  cursor: pointer;
+  transition: .15s ease-in-out;
+}
+
+.bnt:hover {
+  background-color: #db0000BB;
+}
+
+.skeleton {
+  user-select: none;
+  background-color: #eeeeee;
+  color: #eeeeee;
+}
+
+
+
