@@ -1,5 +1,7 @@
 import ThemovieDBSources from "../../data/theMoviedb-sources";
 import movieTemplate from "../../template/movieTemplate";
+
+
 const Upcoming = {
     render() {
         console.log('Sedang merender halaman upcoming') ; 

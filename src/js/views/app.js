@@ -1,8 +1,6 @@
 import routes from "../routes/routes";
 import UrlParser from "../routes/urlParser";
 import DrawerIniator from "../utils/drawerInitiator";
-import searchMovie from "../utils/search-movie";
-import { renderMovieListToItem } from "./templates/movieTemplate";
 
 class App {
     constructor({button, drawer, content}) {
@@ -25,17 +23,9 @@ class App {
         console.log('Anda akan mengakses url : ', url)
         const pageScript = routes[url]  ; 
         this._content.innerHTML =  pageScript.render();
-        const fetchData = await  pageScript.renderMovieContent();
-        this._initListener(fetchData);
+        await  pageScript.renderMovieContent();
     }
 
-    _initListener(movieList){
-        const searchElem = document.querySelector('#search-film');
-        searchElem.addEventListener('change', () => {
-            const filteredMovies = searchMovie(movieList, searchElem.value); 
-            renderMovieListToItem(filteredMovies);
-        })
-    }
 }
 
 export default App ; 

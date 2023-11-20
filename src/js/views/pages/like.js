@@ -1,25 +1,20 @@
-import { renderMovieTemplate } from "../templates/movieTemplate";
+import FavoriteMovieView from "./liked-movies/favorite-movie-view";
+import FavoriteShowPresenter from "./liked-movies/favorite-movies-show-presenter";
 import FavoriteMovieIdb from "../../data/favorite-movie-db-idb";
 
+const view = new FavoriteMovieView();
+
 const LikeMovie = {
-    render() {
-        return `
-            <div class="content">
-                <h2 class="content__heading">Now Playing In Cinema</h2>
-                <div id="movies"></div>
-            </div>
-        `;
-    }, 
+  render() {
+    return view.renderTemplate();
+  },
 
-    async renderMovieContent() {
-        const movieContainer = document.querySelector('#movies') ; 
-        const movies = await FavoriteMovieIdb.getAllMovie() ;
-        movies.forEach(movie => {
-            movieContainer.innerHTML += renderMovieTemplate(movie) ;
-            
-        });
-    }
+  async renderMovieContent() {
+    new FavoriteShowPresenter({
+      view: view,
+      favoriteMoviesIdb: FavoriteMovieIdb,
+    });
+  },
+};
 
-}
-
-export default LikeMovie ; 
+export default LikeMovie;

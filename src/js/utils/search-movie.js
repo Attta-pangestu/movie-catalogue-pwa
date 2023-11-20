@@ -1,14 +1,12 @@
-const Fuse = require('fuse.js');
+export const searchMovies = (query, movieList) => {
+  const listFiltered = movieList.filter((movie) => {
+    const loweredMovieTitle = (movie.title || "-").toLowerCase();
+    const noSpaceMovieTitle = loweredMovieTitle.replace(/\s/g, "");
 
+    const loweredQuery = (query || "-").toLowerCase();
+    const noSpaceQuery = loweredQuery.replace(/\s/g, "");
 
-const searchMovie = (movies, query) => {
-    const fuse = new Fuse(movies, {
-        keys: ['title'], 
-        includeScore: true,
-        threshold:0.4, 
-    })
-    
-    return fuse.search(query)
-}
-
-module.exports = searchMovie;
+    return noSpaceMovieTitle.indexOf(noSpaceQuery) !== -1;
+  });
+  return listFiltered;
+};
