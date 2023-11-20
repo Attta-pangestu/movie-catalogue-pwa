@@ -1,19 +1,19 @@
 import Config from "../../config/config";
 
 const renderMovieListToItem = (movieList) => {
-    const moviesContainer = document.querySelector('#movies') ;
-    moviesContainer.innerHTML = '';
-    movieList.forEach( async (movie) => {
-        if(movie.item) {
-            moviesContainer.innerHTML += renderMovieTemplate(movie.item);
-        }else{
-            moviesContainer.innerHTML += renderMovieTemplate(movie);
-        }
-    });
-}
+  const moviesContainer = document.querySelector("#movies");
+  moviesContainer.innerHTML = "";
+  movieList.forEach(async (movie) => {
+    if (movie.item) {
+      moviesContainer.innerHTML += renderMovieTemplate(movie.item);
+    } else {
+      moviesContainer.innerHTML += renderMovieTemplate(movie);
+    }
+  });
+};
 
-const renderMovieTemplate = (movie) =>  {
-        return `
+const renderMovieTemplate = (movie) => {
+  return `
             <div class="movie-item" >
                 <div class="movie-item__header">
                     <img class="movie-item__header__poster" 
@@ -21,14 +21,22 @@ const renderMovieTemplate = (movie) =>  {
                         src="${Config.BASE_IMAGE_URL + movie.backdrop_path}"
                     />
                     <div class="movie-item__header__rating">
-                        <p>⭐ <span class="movie-item__header__rating__score">${movie.vote_average}</span> </p>
+                        <p>⭐ <span class="movie-item__header__rating__score">${
+                          movie.vote_average
+                        }</span> </p>
                     </div>
                 </div>
 
                 <div class="movie-item__content">
-                    <h3 class="movie-item__content__title"><a>${movie.title}</a></h3>
+                    <h3 class="movie-item__content__title"><a>${
+                      movie.title
+                    }</a></h3>
                     <p>${movie.overview}</p>
-                    <a href="/#/detail/${movie.id}" class="movie-item__content__button" > Detail Film ${movie.title} </a>
+                    <a href="/#/detail/${
+                      movie.id
+                    }" class="movie-item__content__button" > Detail Film ${
+    movie.title
+  } </a>
                     <button class="movie-item__like like" id="btn-${movie.id}">
                     <i class="fa fa-heart-o" aria-hidden="true"></i>
                     </button>
@@ -36,13 +44,14 @@ const renderMovieTemplate = (movie) =>  {
                 
             </div>
         `;
-    }
+};
 
-
-const renderDetailMovie = ({movie, movieContainer}) =>  {
-        movieContainer.innerHTML = `
+const renderDetailMovie = ({ movie, movieContainer }) => {
+  movieContainer.innerHTML = `
             <h2 class="movie__title">${movie.original_title}</h2>
-            <img class="movie__poster" src="${Config.BASE_IMAGE_URL + movie.poster_path }"/>
+            <img class="movie__poster" src="${
+              Config.BASE_IMAGE_URL + movie.poster_path
+            }"/>
             <div class="movie__info">
                 <h3>Movie Information</h3>
                 
@@ -64,24 +73,24 @@ const renderDetailMovie = ({movie, movieContainer}) =>  {
                 </div>
             </div>
         `;
-    }
+};
 
 const renderLikedButton = () => {
-    return `
-        <i class="fa fa-heart" aria-hidden="true"></i>
+  return `
+        <i class="fa fa-heart"  aria-label="unlike this movie"></i>
     `;
-}
+};
 
 const renderNotLikedButton = () => {
-    return `
-    <i class="fa fa-heart-o" aria-hidden="true"></i>
+  return `
+    <i class="fa fa-heart-o" aria-label="like this movie" ></i>
     `;
-}
+};
 
 export {
-    renderMovieTemplate,
-    renderDetailMovie, 
-    renderLikedButton, 
-    renderNotLikedButton, 
-    renderMovieListToItem,
-} ; 
+  renderMovieTemplate,
+  renderDetailMovie,
+  renderLikedButton,
+  renderNotLikedButton,
+  renderMovieListToItem,
+};
