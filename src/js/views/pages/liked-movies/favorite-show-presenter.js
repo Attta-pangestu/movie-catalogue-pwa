@@ -1,6 +1,6 @@
 class FavoriteMovieSearchPresenter {
   constructor({ favoriteMoviesDB, view, searchUtilities }) {
-    this._favoriteMovies = favoriteMoviesDB;
+    this._favoriteMoviesDB = favoriteMoviesDB;
     this._view = view;
     this._searchUtilities = searchUtilities;
     this._listenToSearchRequestByUser();
@@ -13,11 +13,11 @@ class FavoriteMovieSearchPresenter {
   }
 
   _searchMovies(query) {
-    const filtered = this._searchUtilities(query, this._favoriteMovies);
-    this._displayFavoriteMovie(filtered);
+    const filtered = this._searchUtilities(query, this._favoriteMoviesDB);
+    this._displayFavorite(filtered);
   }
 
-  _displayFavoriteMovie(movies) {
+  _displayFavorite(movies) {
     this._view.showFavoriteMovies(movies);
   }
 }

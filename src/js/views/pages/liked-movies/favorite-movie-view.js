@@ -11,7 +11,7 @@ class FavoriteMovieView {
       `;
   }
 
-  searchEventCallback(callback) {
+  _searchEventCallback(callback) {
     const searchElem = document.getElementById("search-film");
     searchElem.addEventListener("change", (e) => {
       callback(e.target.value);
